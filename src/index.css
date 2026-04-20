@@ -1,0 +1,47 @@
+@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --color-ohr-red: #CA3028;
+  --color-ohr-green: #648156;
+  --color-ohr-yellow: #FBBF24;
+  --color-ohr-tan: #BA7D44;
+  --color-ohr-neutral: #1a1a1a;
+  --color-ohr-bg: #F2F2F2;
+  --color-ohr-light-gray: #E8E8E8;
+  
+  --font-sans: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, SFMono-Regular, monospace;
+}
+
+@layer base {
+  body {
+    @apply bg-ohr-bg text-ohr-neutral antialiased;
+  }
+}
+
+@layer components {
+  .industrial-border {
+    @apply border-ohr-neutral;
+  }
+  
+  .caution-stripe {
+    background: repeating-linear-gradient(45deg, #FBBF24, #FBBF24 10px, #000 10px, #000 20px);
+  }
+
+  .btn {
+    @apply px-6 py-3 font-extrabold uppercase tracking-widest text-[0.85rem] transition-all cursor-pointer inline-flex items-center justify-center;
+  }
+
+  .btn-red {
+    @apply bg-ohr-red text-white hover:bg-ohr-neutral;
+  }
+
+  .btn-outline {
+    @apply bg-transparent border-2 border-white text-white hover:bg-white hover:text-ohr-neutral;
+  }
+  
+  .service-card {
+    @apply bg-white p-4 flex flex-col justify-between;
+  }
+}
