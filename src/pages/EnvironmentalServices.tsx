@@ -8,35 +8,35 @@ export default function EnvironmentalServices() {
       id: "natural-disaster",
       title: "Natural Disaster Response",
       icon: <Wind className="w-8 h-8" />,
-      image: "https://images.unsplash.com/photo-1547683908-21aa53140b44?q=80&w=600&auto=format&fit=crop",
+      image: "/ohr3.jpg",
       description: "Our disaster response team steps in to quickly restore safety and order after storms, floods, tornadoes, and other natural disasters."
     },
     {
       id: "livestock-recovery",
       title: "Livestock Recovery",
       icon: <BadgeCheck className="w-8 h-8" />,
-      image: "https://images.unsplash.com/photo-1541888946425-d81bb19240f5?q=80&w=600&auto=format&fit=crop",
+      image: "/ohr11.jpg",
       description: "We provide safe and reliable livestock recovery for farmers, ranchers, and property owners. Certified by the Oklahoma Department of Agriculture."
     },
     {
       id: "waste-disposal",
       title: "Waste Disposal",
       icon: <Trash2 className="w-8 h-8" />,
-      image: "https://images.unsplash.com/photo-1541888946425-d81bb19240f5?q=80&w=600&auto=format&fit=crop",
+      image: "/ohr2.jpg",
       description: "We provide professional handling, transportation, and disposal of both hazardous and non-hazardous waste in full regulatory compliance."
     },
     {
       id: "industrial-spill-planning",
       title: "Industrial Spill & Response Planning",
       icon: <Briefcase className="w-8 h-8" />,
-      image: "https://images.unsplash.com/photo-1541888946425-d81bb19240f5?q=80&w=600&auto=format&fit=crop",
+      image: "/ohr10.jpeg",
       description: "These plans identify potential hazards, outline step-by-step procedures, and provide guidance for safe containment, cleanup, and disposal."
     },
     {
       id: "pre-planning",
       title: "Pre-Planning Services",
       icon: <FileText className="w-8 h-8" />,
-      image: "https://images.unsplash.com/photo-1584622650111-993a426fbf0a?q=80&w=600&auto=format&fit=crop",
+      image: "/ohr9.jpeg",
       description: "Designed to help businesses, municipalities, and transportation companies develop a clear, actionable response plan before an incident occurs."
     }
   ];
@@ -45,12 +45,17 @@ export default function EnvironmentalServices() {
     <div className="pb-24 bg-ohr-bg">
       <header className="bg-ohr-neutral py-20 text-white relative overflow-hidden text-center border-b-6 border-ohr-neutral">
         <div className="absolute inset-0 opacity-10">
-          <img src="https://images.unsplash.com/photo-1541888946425-d81bb19240f5?q=80&w=2000&auto=format&fit=crop" className="w-full h-full object-cover" alt="Environmental background" referrerPolicy="no-referrer" />
+          <img src="/ohr11.jpg" className="w-full h-full object-cover" alt="Environmental background" />
+        </div>
+        {/* Back nav row */}
+        <div className="relative z-10 border-b border-white/10 mb-12">
+          <div className="max-w-7xl mx-auto px-6 py-3">
+            <Link to="/" className="inline-flex items-center gap-2 text-xs font-black uppercase tracking-[0.2em] text-zinc-400 hover:text-white transition-colors">
+              <ArrowLeft className="w-4 h-4" /> Back to Home
+            </Link>
+          </div>
         </div>
         <div className="max-w-7xl mx-auto px-6 relative z-10 space-y-8 text-center">
-          <Link to="/" className="inline-flex items-center gap-2 text-xs font-black uppercase tracking-[0.2em] text-zinc-400 hover:text-white transition-colors">
-            <ArrowLeft className="w-4 h-4" /> Back to Home
-          </Link>
           <div className="space-y-6">
             <div className="inline-flex items-center gap-2 px-3 py-1 bg-ohr-green text-white text-[10px] font-mono font-bold uppercase tracking-[0.4em]">
               Long-term Stability
@@ -78,7 +83,6 @@ export default function EnvironmentalServices() {
                  src={service.image} 
                  alt={service.title} 
                  className="w-full h-full object-cover grayscale brightness-75 group-hover:grayscale-0 group-hover:scale-110 transition-all duration-700" 
-                 referrerPolicy="no-referrer"
                />
             </div>
             <div className="p-8 flex-grow flex flex-col space-y-4">

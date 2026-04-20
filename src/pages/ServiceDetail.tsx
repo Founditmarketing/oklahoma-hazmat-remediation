@@ -17,7 +17,7 @@ const servicesData: Record<string, {
     category: "Emergency Response",
     icon: <Biohazard className="w-12 h-12" />,
     color: "ohr-red",
-    image: "https://images.unsplash.com/photo-1584622650111-993a426fbf0a?q=80&w=2600&auto=format&fit=crop",
+    image: "/ohr4.jpg",
     description: "Our core biohazard team uses specialized equipment, medical-grade cleaning agents, and proven containment methods to fully remove contamination and restore safety.",
     detailedInfo: [
       "Biohazard remediation is more than just cleaning; it's a specialized process that requires high-level certification and technical precision. OHR technicians are trained in the latest containment and neutralization protocols to handle infectious materials safely.",
@@ -31,7 +31,7 @@ const servicesData: Record<string, {
     category: "Emergency Response",
     icon: <AlertTriangle className="w-12 h-12" />,
     color: "ohr-red",
-    image: "https://images.unsplash.com/photo-1542435503-956c469947f6?q=80&w=2600&auto=format&fit=crop",
+    image: "/ohr5.jpg",
     description: "We handle every situation with sensitivity, ensuring families and property owners are supported through each step of the process.",
     detailedInfo: [
       "Unattended death remediation requires both technical expertise and a high degree of empathy. OHR technicians are professionals who understand the sensitive nature of these situations and work with the utmost discretion and respect.",
@@ -45,7 +45,7 @@ const servicesData: Record<string, {
     category: "Emergency Response",
     icon: <Truck className="w-12 h-12" />,
     color: "ohr-red",
-    image: "https://images.unsplash.com/photo-1518709268805-4e9042af9f23?q=80&w=2600&auto=format&fit=crop",
+    image: "/ohr9.jpeg",
     description: "We provide fast, thorough cleanup and cargo recovery to restore safety and get roadways back to normal as quickly as possible.",
     detailedInfo: [
       "When a commercial vehicle is involved in an incident on Oklahoma highways, the variables are complex. Fuel leaks, fluids, and scattered cargo create immediate hazards for other motorists and the environment.",
@@ -59,7 +59,7 @@ const servicesData: Record<string, {
     category: "Emergency Response",
     icon: <ShieldCheck className="w-12 h-12" />,
     color: "ohr-red",
-    image: "https://images.unsplash.com/photo-1584622650111-993a426fbf0a?q=80&w=2600&auto=format&fit=crop",
+    image: "/ohr6.jpg",
     description: "We handle crime scene cleanup with professionalism, discretion, and care. Our team responds promptly to remove all biohazards and disinfect surfaces.",
     detailedInfo: [
       "After the first responders and investigators leave, the property owner is often left with a traumatic and hazardous environment. OHR steps in to provide professional remediation that restores the scene to a safe and sanitary condition.",
@@ -73,7 +73,7 @@ const servicesData: Record<string, {
     category: "Emergency Response",
     icon: <Biohazard className="w-12 h-12" />,
     color: "ohr-red",
-    image: "https://images.unsplash.com/photo-1584622650111-993a426fbf0a?q=80&w=2600&auto=format&fit=crop",
+    image: "/ohr7.jpg",
     description: "Blood and bodily fluids can carry serious risks if not handled correctly. Our specialists use proven methods and equipment for full disinfection.",
     detailedInfo: [
       "The cleanup of blood and bodily fluids is strictly regulated by OSHA due to the risk of bloodborne pathogens such as HIV, Hepatitis B, and Hepatitis C. Standard janitorial services are not equipped or insured to handle these hazards.",
@@ -87,7 +87,7 @@ const servicesData: Record<string, {
     category: "Emergency Response",
     icon: <Truck className="w-12 h-12" />,
     color: "ohr-red",
-    image: "https://images.unsplash.com/photo-1542435503-956c469947f6?q=80&w=2600&auto=format&fit=crop",
+    image: "/ohr10.jpeg",
     description: "When cargo shifts or spills on the roadway, OHR secures, recovers, and transfers loads safely.",
     detailedInfo: [
       "Shifted loads or overturned trailers represent a major liability and operational bottleneck for logistics firms. OHR provides the heavy equipment and specialized labor required to rescue cargo and clear the scene.",
@@ -101,7 +101,7 @@ const servicesData: Record<string, {
     category: "Environmental & Recovery",
     icon: <Wind className="w-12 h-12" />,
     color: "ohr-green",
-    image: "https://images.unsplash.com/photo-1547683908-21aa53140b44?q=80&w=2600&auto=format&fit=crop",
+    image: "/ohr3.jpg",
     description: "Our disaster response team steps in to quickly restore safety and order after storms, floods, tornadoes, and other natural disasters.",
     detailedInfo: [
       "In the aftermath of Oklahoma's severe weather patterns, rapid response is the key to preventing further property damage and ensuring community safety. OHR is a primary responder for municipal and private recovery efforts.",
@@ -115,7 +115,7 @@ const servicesData: Record<string, {
     category: "Environmental & Recovery",
     icon: <BadgeCheck className="w-12 h-12" />,
     color: "ohr-green",
-    image: "https://images.unsplash.com/photo-1541888946425-d81bb19240f5?q=80&w=2600&auto=format&fit=crop",
+    image: "/ohr11.jpg",
     description: "We provide safe and reliable livestock recovery for farmers, ranchers, and property owners following disasters.",
     detailedInfo: [
       "Livestock incidents following highway crashes or major storms represent a specialized environmental and agricultural challenge. OHR is uniquely certified by the Oklahoma Department of Agriculture for these specific scenarios.",
@@ -129,7 +129,7 @@ const servicesData: Record<string, {
     category: "Environmental & Recovery",
     icon: <Trash2 className="w-12 h-12" />,
     color: "ohr-green",
-    image: "https://images.unsplash.com/photo-1541888946425-d81bb19240f5?q=80&w=2600&auto=format&fit=crop",
+    image: "/ohr2.jpg",
     description: "We provide professional handling, transportation, and disposal of both hazardous and non-hazardous waste.",
     detailedInfo: [
       "Modern waste management is a complex landscape of federal and state regulations. OHR manages the entire lifecycle of hazardous materials, from initial profiling to final destruction.",
@@ -143,7 +143,7 @@ const servicesData: Record<string, {
     category: "Environmental & Recovery",
     icon: <Briefcase className="w-12 h-12" />,
     color: "ohr-green",
-    image: "https://images.unsplash.com/photo-1541888946425-d81bb19240f5?q=80&w=2600&auto=format&fit=crop",
+    image: "/ohr1.jpg",
     description: "These plans identify potential hazards, outline step-by-step procedures, and provide guidance for safe containment and cleanup.",
     detailedInfo: [
       "For industrial facilities, the question isn't 'if' an incident will occur, but 'when.' A professional response plan is the difference between a minor interruption and a catastrophic financial loss.",
@@ -157,7 +157,7 @@ const servicesData: Record<string, {
     category: "Environmental & Recovery",
     icon: <FileText className="w-12 h-12" />,
     color: "ohr-green",
-    image: "https://images.unsplash.com/photo-1584622650111-993a426fbf0a?q=80&w=2600&auto=format&fit=crop",
+    image: "/ohr8.jpg",
     description: "Designed to help businesses, municipalities, and transportation companies develop a clear, actionable response plan before an incident occurs.",
     detailedInfo: [
       "Crisis pre-planning is the ultimate liability reduction tool for modern enterprises. By establishing a partnership with OHR before an emergency, you lock in priority dispatch and pre-vetted pricing structures.",
@@ -193,13 +193,17 @@ export default function ServiceDetail() {
             src={service.image} 
             alt={service.title} 
             className="w-full h-full object-cover"
-            referrerPolicy="no-referrer"
           />
         </div>
+        {/* Back nav row */}
+        <div className="relative z-10 border-b border-white/10 mb-12">
+          <div className="max-w-7xl mx-auto px-6 py-3">
+            <Link to={service.category === "Emergency Response" ? "/emergency-services" : "/environmental-services"} className="inline-flex items-center gap-2 text-xs font-black uppercase tracking-[0.2em] text-zinc-400 hover:text-white transition-colors">
+              <ArrowLeft className="w-4 h-4" /> Back to {service.category}
+            </Link>
+          </div>
+        </div>
         <div className="max-w-7xl mx-auto px-6 relative z-10">
-          <Link to={service.category === "Emergency Response" ? "/emergency-services" : "/environmental-services"} className="inline-flex items-center gap-2 text-xs font-black uppercase tracking-[0.2em] text-zinc-400 hover:text-white transition-colors mb-12">
-            <ArrowLeft className="w-4 h-4" /> Back to {service.category}
-          </Link>
           <div className={`inline-flex items-center gap-2 px-3 py-1 text-white text-[10px] font-mono font-bold uppercase tracking-[0.4em] mb-6 ${colorClass}`}>
             {service.category}
           </div>
@@ -217,7 +221,6 @@ export default function ServiceDetail() {
                src={service.image} 
                alt={`${service.title} detail`} 
                className="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-700 hover:scale-110"
-               referrerPolicy="no-referrer"
              />
            </div>
 

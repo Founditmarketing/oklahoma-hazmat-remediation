@@ -8,42 +8,42 @@ export default function EmergencyServices() {
       id: "biohazard-cleanup",
       title: "Biohazard Cleanup Services",
       icon: <Biohazard className="w-8 h-8" />,
-      image: "https://images.unsplash.com/photo-1584622650111-993a426fbf0a?q=80&w=600&auto=format&fit=crop",
+      image: "/ohr4.jpg",
       description: "Our team uses specialized equipment, medical-grade cleaning agents, and proven containment methods to fully remove contamination and restore safety."
     },
     {
       id: "unattended-death",
       title: "Unattended Death Cleanups",
       icon: <AlertTriangle className="w-8 h-8" />,
-      image: "https://images.unsplash.com/photo-1542435503-956c469947f6?q=80&w=600&auto=format&fit=crop",
+      image: "/ohr5.jpg",
       description: "We handle every situation with sensitivity, ensuring families and property owners are supported through each step of the process. Our technicians carefully remove all biological hazards."
     },
     {
       id: "vehicle-accident",
       title: "Commercial Vehicle Accident Cleanup",
       icon: <Truck className="w-8 h-8" />,
-      image: "https://images.unsplash.com/photo-1518709268805-4e9042af9f23?q=80&w=600&auto=format&fit=crop",
+      image: "/ohr9.jpeg",
       description: "We provide fast, thorough cleanup and cargo recovery to restore safety and get roadways back to normal as quickly as possible."
     },
     {
       id: "crime-scene",
       title: "Crime Scene Cleanup",
       icon: <ShieldCheck className="w-8 h-8" />,
-      image: "https://images.unsplash.com/photo-1584622650111-993a426fbf0a?q=80&w=600&auto=format&fit=crop",
+      image: "/ohr6.jpg",
       description: "We handle crime scene cleanup with professionalism, discretion, and care. Our team responds promptly to remove all biohazards and restore safety."
     },
     {
       id: "blood-cleanup",
       title: "Blood Cleanup",
       icon: <Biohazard className="w-8 h-8" />,
-      image: "https://images.unsplash.com/photo-1584622650111-993a426fbf0a?q=80&w=600&auto=format&fit=crop",
+      image: "/ohr7.jpg",
       description: "Blood and bodily fluids can carry serious risks if not handled correctly. Our specialists use proven methods and equipment for full disinfection."
     },
     {
       id: "load-transfers",
       title: "LOAD TRANSFERS & SHIFT RECOVERY",
       icon: <Truck className="w-8 h-8" />,
-      image: "https://images.unsplash.com/photo-1542435503-956c469947f6?q=80&w=600&auto=format&fit=crop",
+      image: "/ohr10.jpeg",
       description: "When cargo shifts or spills on the roadway, OHR secures, recovers, and transfers loads safely to reduce downtime and keep highways open."
     }
   ];
@@ -52,12 +52,17 @@ export default function EmergencyServices() {
     <div className="pb-24 bg-ohr-bg">
       <header className="bg-ohr-neutral py-20 text-white relative overflow-hidden text-center border-b-6 border-ohr-neutral">
         <div className="absolute inset-0 opacity-10">
-          <img src="https://images.unsplash.com/photo-1518709268805-4e9042af9f23?q=80&w=2000&auto=format&fit=crop" className="w-full h-full object-cover" alt="Emergency background" referrerPolicy="no-referrer" />
+          <img src="/ohr9.jpeg" className="w-full h-full object-cover" alt="Emergency background" />
+        </div>
+        {/* Back nav row */}
+        <div className="relative z-10 border-b border-white/10 mb-12">
+          <div className="max-w-7xl mx-auto px-6 py-3">
+            <Link to="/" className="inline-flex items-center gap-2 text-xs font-black uppercase tracking-[0.2em] text-zinc-400 hover:text-white transition-colors">
+              <ArrowLeft className="w-4 h-4" /> Back to Home
+            </Link>
+          </div>
         </div>
         <div className="max-w-7xl mx-auto px-6 relative z-10 space-y-8">
-          <Link to="/" className="inline-flex items-center gap-2 text-xs font-black uppercase tracking-[0.2em] text-zinc-400 hover:text-white transition-colors">
-            <ArrowLeft className="w-4 h-4" /> Back to Home
-          </Link>
           <div className="space-y-6">
             <div className="inline-flex items-center gap-2 px-3 py-1 bg-ohr-red text-white text-[10px] font-mono font-bold uppercase tracking-[0.4em]">
               Critical Response Hub
@@ -85,7 +90,6 @@ export default function EmergencyServices() {
                  src={service.image} 
                  alt={service.title} 
                  className="w-full h-full object-cover grayscale brightness-75 group-hover:grayscale-0 group-hover:scale-110 transition-all duration-700" 
-                 referrerPolicy="no-referrer"
                />
             </div>
             <div className="p-8 flex-grow flex flex-col space-y-4">

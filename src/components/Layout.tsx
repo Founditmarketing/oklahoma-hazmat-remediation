@@ -19,6 +19,7 @@ export default function Layout({ children }: LayoutProps) {
 
   const navLinks = [
     { name: "Home", path: "/" },
+    { name: "About", path: "/about" },
     { 
       name: "Emergency Response", 
       path: "/emergency-services",
@@ -64,11 +65,15 @@ export default function Layout({ children }: LayoutProps) {
 
       {/* Main Navigation */}
       <header className="bg-white border-b-3 border-ohr-neutral px-6 h-[60px] flex items-center justify-between sticky top-0 z-40">
-        <Link to="/" className="flex items-center group">
-          <span className="text-2xl font-black text-ohr-red mr-2 tracking-tighter">OHR</span>
+        <Link to="/" className="flex items-center gap-3 group">
+          <img
+            src="/ohr logo.png"
+            alt="Oklahoma Hazmat & Remediation Logo"
+            className="h-10 w-auto object-contain"
+          />
           <div className="flex flex-col leading-none">
-            <span className="text-[0.65rem] font-black uppercase tracking-tighter text-ohr-neutral">OKLAHOMA HAZMAT</span>
-            <span className="text-[0.65rem] font-bold text-ohr-neutral tracking-tight">& REMEDIATION</span>
+            <span className="text-[0.75rem] font-black uppercase tracking-tighter text-ohr-neutral">Oklahoma Hazmat</span>
+            <span className="text-[0.7rem] font-bold text-ohr-neutral tracking-tight">& Remediation</span>
           </div>
         </Link>
 

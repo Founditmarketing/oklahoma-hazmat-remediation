@@ -1,4 +1,4 @@
-import { motion } from "motion/react";
+import { motion, AnimatePresence } from "motion/react";
 import { 
   Truck, 
   Biohazard as BiohazardIcon, 
@@ -13,10 +13,22 @@ import {
   BadgeCheck,
   AlertTriangle,
   FileText,
+  ZoomIn,
+  X,
 } from "lucide-react";
 import { Link } from "react-router-dom";
+import { useState, useEffect } from "react";
 
 export default function Home() {
+  const [lightboxImg, setLightboxImg] = useState<string | null>(null);
+
+  useEffect(() => {
+    const handleKeyDown = (e: KeyboardEvent) => {
+      if (e.key === "Escape") setLightboxImg(null);
+    };
+    window.addEventListener("keydown", handleKeyDown);
+    return () => window.removeEventListener("keydown", handleKeyDown);
+  }, []);
   const emergencyServices = [
     {
       title: "Biohazard Cleanup Services",
@@ -90,22 +102,22 @@ export default function Home() {
   ];
 
   const galleryImages = [
-    "https://images.unsplash.com/photo-1541888946425-d81bb19240f5?q=80&w=1000&auto=format&fit=crop",
-    "https://images.unsplash.com/photo-1518709268805-4e9042af9f23?q=80&w=1000&auto=format&fit=crop",
-    "https://images.unsplash.com/photo-1542435503-956c469947f6?q=80&w=1000&auto=format&fit=crop",
-    "https://images.unsplash.com/photo-1584622650111-993a426fbf0a?q=80&w=1000&auto=format&fit=crop",
+    "/ohr4.jpg",
+    "/ohr5.jpg",
+    "/ohr6.jpg",
+    "/ohr7.jpg",
   ];
 
   return (
+    <>
     <div className="flex flex-col bg-ohr-bg min-h-screen">
       {/* 1. HERO SECTION */}
       <section className="relative h-[450px] flex items-center overflow-hidden bg-zinc-900 px-6 md:px-16 border-b-4 border-ohr-neutral">
         <div className="absolute inset-0 z-0">
           <img 
-            src="https://images.unsplash.com/photo-1518709268805-4e9042af9f23?q=80&w=2600&auto=format&fit=crop" 
+            src="/ohr1.jpg" 
             alt="Industrial truck" 
             className="w-full h-full object-cover opacity-20 grayscale brightness-150"
-            referrerPolicy="no-referrer"
           />
           <div className="absolute inset-0 bg-gradient-to-r from-zinc-900 via-zinc-900/60 to-transparent" />
         </div>
@@ -127,7 +139,7 @@ export default function Home() {
             </p>
             <div className="flex flex-col sm:flex-row gap-4 pt-4">
               <a href="tel:4054942889" className="btn btn-red scale-110">EMERGENCY CALL: 405.494.2889</a>
-              <Link to="/services/pre-planning" className="btn btn-outline hover:text-black">Get a Compliance Quote</Link>
+              <Link to="/contact" className="btn btn-outline hover:text-black">Get a Compliance Quote</Link>
             </div>
           </motion.div>
         </div>
@@ -135,6 +147,7 @@ export default function Home() {
 
       {/* 2. ABOUT US SECTION */}
       <section className="bg-white border-b-2 border-zinc-200">
+        {/* Top: image + intro */}
         <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2">
           <div className="p-12 md:p-24 space-y-8 border-r border-zinc-100">
             <h4 className="text-xs font-black uppercase text-ohr-tan tracking-[0.3em]">Who We Are</h4>
@@ -142,27 +155,77 @@ export default function Home() {
               Built to Solve <br/><span className="text-ohr-red">The Professional Gap.</span>
             </h2>
             <p className="text-zinc-600 text-lg leading-relaxed">
-              Founded in 2024, OHR was established by veterans with over 35 years of industry experience. We recognized that Oklahoma lacked a remediation partner that combined high-authority compliance with rugged, localized response capabilities. 
+              Founded in 2024 and backed by over 35 years of combined industry experience, Oklahoma Hazmat &amp; Remediation (OHR) brings expert-level knowledge and precision to every cleanup and remediation project across the state.
             </p>
-            <div className="grid grid-cols-2 gap-8 pt-8 border-t border-zinc-50">
-               <div className="space-y-1">
-                 <p className="text-xs font-black text-zinc-400 uppercase tracking-widest">Experience</p>
-                 <p className="text-2xl font-black text-ohr-neutral">35+ YEARS</p>
-               </div>
-               <div className="space-y-1">
-                 <p className="text-xs font-black text-zinc-400 uppercase tracking-widest">Base of Ops</p>
-                 <p className="text-2xl font-black text-ohr-neutral">DEL CITY, OK</p>
-               </div>
-            </div>
+            <p className="text-zinc-500 leading-relaxed">
+              We specialize in hazmat cleanup, highway spill response, biohazard and crime scene cleanup, industrial spill management, natural disaster response, and livestock recovery. From small-scale incidents to major emergencies — our goal is always the same: restore safety quickly while maintaining the highest environmental and regulatory standards.
+            </p>
+            <Link to="/about" className="inline-flex items-center gap-2 text-xs font-black uppercase tracking-widest text-ohr-red border-b-2 border-ohr-red pb-1 hover:text-ohr-neutral hover:border-ohr-neutral transition-colors">
+              Learn More About OHR <ArrowRight className="w-4 h-4" />
+            </Link>
           </div>
           <div className="relative overflow-hidden group">
             <img 
-              src="https://images.unsplash.com/photo-1541888946425-d81bb19240f5?q=80&w=1000&auto=format&fit=crop" 
-              alt="Industrial facility" 
+              src="/ohr2.jpg" 
+              alt="OHR operations" 
               className="w-full h-full object-cover grayscale brightness-75 group-hover:grayscale-0 group-hover:scale-105 transition-all duration-700" 
-              referrerPolicy="no-referrer"
             />
             <div className="absolute inset-0 bg-ohr-red/10 mix-blend-multiply" />
+          </div>
+        </div>
+
+        {/* Stats bar */}
+        <div className="border-t-2 border-zinc-100">
+          <div className="max-w-7xl mx-auto grid grid-cols-2 md:grid-cols-4 divide-x divide-zinc-100">
+            {[
+              { label: "Years Experience", value: "35+" },
+              { label: "Base of Operations", value: "DEL CITY, OK" },
+              { label: "Response Coverage", value: "STATEWIDE" },
+              { label: "Availability", value: "24 / 7 / 365" },
+            ].map((stat, i) => (
+              <div key={i} className="px-8 py-10 space-y-1">
+                <p className="text-xs font-black text-zinc-400 uppercase tracking-widest">{stat.label}</p>
+                <p className="text-xl font-black text-ohr-neutral tracking-tight">{stat.value}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+
+        {/* Mission + Certifications */}
+        <div className="border-t-2 border-zinc-100 bg-zinc-50">
+          <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-0">
+            {/* Mission */}
+            <div className="p-12 md:p-16 space-y-6 border-r border-zinc-200">
+              <h4 className="text-xs font-black uppercase text-ohr-red tracking-[0.3em]">Our Mission</h4>
+              <p className="text-zinc-700 text-lg leading-relaxed font-medium italic border-l-4 border-ohr-red pl-6">
+                "True recovery means more than cleanup — it means helping communities and businesses return to normal safely and responsibly."
+              </p>
+              <p className="text-zinc-500 text-sm leading-relaxed">
+                Every member of the OHR team is trained to respond with compassion, care, and professionalism. Whether it's recovering cargo after a highway accident, cleaning up a contaminated site, or providing safe holding for displaced livestock, we work with urgency and respect for those affected.
+              </p>
+            </div>
+            {/* Certifications */}
+            <div className="p-12 md:p-16 space-y-6">
+              <h4 className="text-xs font-black uppercase text-ohr-red tracking-[0.3em]">Certifications &amp; Compliance</h4>
+              <p className="text-zinc-500 text-sm leading-relaxed">
+                OHR holds active certifications with federal and state regulatory bodies, ensuring every operation meets the highest legal and environmental standards.
+              </p>
+              <div className="space-y-3">
+                {[
+                  { body: "FMCSA", full: "Federal Motor Carrier Safety Administration" },
+                  { body: "ODQ", full: "Oklahoma Department of Quality" },
+                  { body: "OK Dept. of Agriculture", full: "Livestock Recovery &amp; Agricultural Response" },
+                ].map((cert, i) => (
+                  <div key={i} className="flex items-center gap-4 p-4 bg-white border border-zinc-200 border-l-4 border-l-ohr-neutral">
+                    <ShieldCheck className="w-5 h-5 text-ohr-neutral flex-shrink-0" />
+                    <div>
+                      <p className="text-xs font-black uppercase tracking-widest text-ohr-neutral">{cert.body}</p>
+                      <p className="text-xs text-zinc-400 font-medium" dangerouslySetInnerHTML={{ __html: cert.full }} />
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </div>
           </div>
         </div>
       </section>
@@ -171,10 +234,9 @@ export default function Home() {
       <section className="relative overflow-hidden py-24 bg-zinc-50 border-b-2 border-zinc-200">
         <div className="absolute inset-0 z-0">
           <img 
-            src="https://images.unsplash.com/photo-1504917595217-d4dc5f9c4708?q=80&w=2600&auto=format&fit=crop" 
+            src="/ohr3.jpg" 
             alt="Emergency response scene" 
             className="w-full h-full object-cover opacity-25 grayscale contrast-125"
-            referrerPolicy="no-referrer"
           />
           <div className="absolute inset-0 bg-gradient-to-b from-zinc-50 via-zinc-50/40 to-zinc-50" />
         </div>
@@ -250,13 +312,19 @@ export default function Home() {
         </div>
         <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
           {galleryImages.map((img, idx) => (
-            <div key={idx} className="aspect-square overflow-hidden border-2 border-zinc-100 group cursor-crosshair">
+            <div
+              key={idx}
+              className="aspect-square overflow-hidden border-2 border-zinc-100 group cursor-pointer relative"
+              onClick={() => setLightboxImg(img)}
+            >
               <img 
                 src={img} 
                 alt={`Remediation scene ${idx + 1}`} 
-                className="w-full h-full object-cover grayscale hover:grayscale-0 hover:scale-110 transition-all duration-500"
-                referrerPolicy="no-referrer"
+                className="w-full h-full object-cover grayscale group-hover:grayscale-0 group-hover:scale-110 transition-all duration-500"
               />
+              <div className="absolute inset-0 bg-black/0 group-hover:bg-black/30 transition-colors duration-300 flex items-center justify-center">
+                <ZoomIn className="w-8 h-8 text-white opacity-0 group-hover:opacity-100 transition-opacity duration-300 drop-shadow-lg" />
+              </div>
             </div>
           ))}
         </div>
@@ -342,5 +410,48 @@ export default function Home() {
         </div>
       </section>
     </div>
+
+      {/* Lightbox */}
+      <AnimatePresence>
+        {lightboxImg && (
+          <motion.div
+            key="home-lightbox"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            transition={{ duration: 0.2 }}
+            className="fixed inset-0 z-50 bg-black/90 flex items-center justify-center p-4 md:p-12"
+            onClick={() => setLightboxImg(null)}
+          >
+            <motion.div
+              initial={{ opacity: 0, scale: 0.9, y: 20 }}
+              animate={{ opacity: 1, scale: 1, y: 0 }}
+              exit={{ opacity: 0, scale: 0.9, y: 20 }}
+              transition={{ duration: 0.25, ease: "easeOut" }}
+              className="relative max-w-4xl w-full overflow-hidden border-4 border-ohr-red shadow-2xl"
+              onClick={(e) => e.stopPropagation()}
+            >
+              <img
+                src={lightboxImg}
+                alt="Enlarged view"
+                className="w-full h-auto max-h-[80vh] object-contain bg-zinc-900"
+              />
+              <div className="bg-zinc-900 border-t-4 border-ohr-red px-6 py-4 flex items-center justify-between">
+                <span className="text-[10px] font-bold text-ohr-red uppercase tracking-widest">On-Site Execution Gallery</span>
+                <button
+                  onClick={() => setLightboxImg(null)}
+                  className="flex items-center gap-2 bg-ohr-red text-white px-4 py-2 font-black text-xs uppercase tracking-widest hover:bg-ohr-neutral transition-colors"
+                >
+                  <X className="w-4 h-4" /> Close
+                </button>
+              </div>
+            </motion.div>
+            <div className="absolute bottom-4 left-1/2 -translate-x-1/2 text-zinc-500 text-[10px] font-bold uppercase tracking-widest">
+              Press ESC or click outside to close
+            </div>
+          </motion.div>
+        )}
+      </AnimatePresence>
+    </>
   );
 }
